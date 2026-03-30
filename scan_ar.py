@@ -1,4 +1,4 @@
-#!/data/leuven/372/vsc37234/miniforge3/bin/python
+
 from array import array
 import gc
 import random
@@ -33,14 +33,14 @@ noise_level = 0.0
 ep = 0.0
 N_repeat = 1
 output_csv = "parameter_scan_ar_2.csv"
-a_values = np.linspace(3.58, 3.67, 10)
+a_values = np.linspace(3.5, 3.67, 18)
 p_base_values = np.linspace(0.09, 0.14, 51)
 
 tau_s_stop_threshold = -1.3
 dfa_stop_threshold = 0.85
 
 rewire_every = 5
-max_avalanches = 5000
+max_avalanches = 10000
 warmup_drop = 1000
 
 mode = "ar"
@@ -490,24 +490,24 @@ for i, a in enumerate(a_values):
 print(f"Finished scan. Results were incrementally saved to {output_csv}")
 
 
-def plot_heatmap(matrix, title, label, filename):
-    plt.figure(figsize=(8, 6))
-    sns.heatmap(
-        matrix,
-        xticklabels=np.round(p_base_values, 3),
-        yticklabels=np.round(a_values, 3),
-        cmap="viridis",
-        cbar_kws={"label": label},
-    )
-    plt.title(title)
-    plt.xlabel("p_base")
-    plt.ylabel("a")
-    plt.tight_layout()
-    plt.savefig(filename, dpi=200)
-    plt.close()
+# def plot_heatmap(matrix, title, label, filename):
+#     plt.figure(figsize=(8, 6))
+#     sns.heatmap(
+#         matrix,
+#         xticklabels=np.round(p_base_values, 3),
+#         yticklabels=np.round(a_values, 3),
+#         cmap="viridis",
+#         cbar_kws={"label": label},
+#     )
+#     plt.title(title)
+#     plt.xlabel("p_base")
+#     plt.ylabel("a")
+#     plt.tight_layout()
+#     plt.savefig(filename, dpi=200)
+#     plt.close()
 
 
-plot_heatmap(tau_d_matrix, "tau_d", "tau_d", "heatmap_tau_d.png")
-plot_heatmap(tau_s_matrix, "tau_s", "tau_s", "heatmap_tau_s.png")
-plot_heatmap(dfa_matrix, "DFA α", "DFA", "heatmap_dfa.png")
-plot_heatmap(slope_matrix, "PSD slope", "PSD slope", "heatmap_psd.png")
+# plot_heatmap(tau_d_matrix, "tau_d", "tau_d", "heatmap_tau_d.png")
+# plot_heatmap(tau_s_matrix, "tau_s", "tau_s", "heatmap_tau_s.png")
+# plot_heatmap(dfa_matrix, "DFA α", "DFA", "heatmap_dfa.png")
+# plot_heatmap(slope_matrix, "PSD slope", "PSD slope", "heatmap_psd.png")
