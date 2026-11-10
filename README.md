@@ -1,11 +1,13 @@
 # criticality-independent-oscillators
 
-This repository contains simulation and analysis code for the work \textbf{Homeostatic self-tuning of critical neuronal avalanches in random activity networks} by Congcong Du, Alkan kabakcioglu and Cees van Leeuwen.
+This repository contains simulation and analysis code for the work \textbf{Homeostatic self-tuning of critical-like neuronal avalanches in a stochastic propagation framwork} by Congcong Du, Alkan kabakcioglu and Cees van Leeuwen.
 
-The two main files are:
+The four main files are:
 
-- [`Code/main.ipynb`]: interactive notebook for running a single simulation, saving time-series outputs, and generating figures for the random activation model.
+- [`Code/HTM.ipynb`]: interactive notebook for running a single simulation, saving time-series outputs, and generating figures for the homogeneous transmission model.
+- [`Code/SDM.ipynb`]: interactive notebook for running a single simulation, saving time-series outputs, and generating figures for the similarity-dependent transmission model.
 - [`Code/self-tuning_model.ipynb`]: interactive notebook for running simulations on self-tuning model.
+- [`Code/critical_window_definitions.m`]: to calculate the critical window width with uncertainty and generate figure.
 
 ### The key parameter cell defines:
 
